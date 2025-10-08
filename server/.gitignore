@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+# Virtual environment names can vary, add any other names you use
+# e.g., .env_dev/
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.DS_Store # macOS specific
+
+# FastAPI/Uvicorn specific
+# Logs and temporary files
+*.log
+tmp/
+.pytest_cache/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Database files (if using SQLite or similar local databases)
+*.sqlite3
+*.db
+*.db-journal
+
+# Build artifacts (if any)
+dist/
+build/
+
+# Jupyter Notebook specific (if used for development)
+.ipynb_checkpoints/
