@@ -7,9 +7,9 @@ import { PersonIcon } from '@radix-ui/react-icons';
 export const InterviewHeader = () => {
   return (
     <header className="flex items-center justify-between gap-8 py-3">
-      <Link href="/" className="flex items-center gap-1 rounded-2xl bg-[#3a63ff] px-3 py-1 text-sm text-white">
-        <ArrowLeftIcon className="size-4" />
-        Back to Home
+      <Link href="/" className="flex items-center gap-1 rounded-2xl bg-[#3a63ff] px-3 py-1 text-sm">
+        <ArrowLeftIcon className="size-4 text-white" />
+        <span className="text-white">Back to Home</span>
       </Link>
 
       <h1 className="text-xl font-bold text-[#3a63ff]">AI Interview</h1>

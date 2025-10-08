@@ -24,8 +24,8 @@ export const InterviewEnd = ({ setInterviewStatus }: InterviewEndProps) => {
         Start New Interview
       </AccentButton>
       <Link href="/" className={cn(accentButtonClassnames, 'mt-2 w-full bg-[#03216d]')}>
-        <ArrowLeftIcon className="mr-2 size-4" />
-        Back to Home
+        <ArrowLeftIcon className="mr-2 size-4 text-white" />
+        <span className="text-white">Back to Home</span>
       </Link>
     </div>
   );

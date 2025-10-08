@@ -7,7 +7,7 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ['latin'], preload: true 
 const inter = Inter({ subsets: ['latin'], preload: true });
 
 export const metadata: Metadata = {
-  title: 'APRIORA',
+  title: 'Alex AI',
   description: 'Coding Challenge',
 };
 

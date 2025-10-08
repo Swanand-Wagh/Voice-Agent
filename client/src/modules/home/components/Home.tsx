@@ -20,7 +20,7 @@ export const Home = () => {
           <div className="flex flex-col items-start">
             <h2 className="text-lg font-semibold leading-tight">AI Interviewer</h2>
             <p className="text-sm text-muted-foreground">
-              Powered by&nbsp;<AccentText>Apriora</AccentText>
+              Powered by&nbsp;<AccentText>Alex AI</AccentText>
             </p>
           </div>
         </div>
@@ -38,8 +38,8 @@ export const Home = () => {
         </div>
 
         <Link href="/interview" className={cn(accentButtonClassnames, 'mb-8 mt-6')}>
-          <PlayIcon className="mr-2 size-4" />
-          Let&apos;s Get Started
+          <PlayIcon className="mr-2 size-4 text-white" />
+          <span className="text-white">Let&apos;s Get Started</span>
         </Link>
       </div>
     </section>
