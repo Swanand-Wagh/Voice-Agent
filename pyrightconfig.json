@@ -1,0 +1,15 @@
+{
+  "typeCheckingMode": "off",
+  "diagnosticSeverityOverrides": {
+    "reportUnknownVariableType": "none",
+    "reportUnknownParameterType": "none",
+    "reportMissingParameterType": "none",
+    "reportArgumentType": "none",
+    "reportUnusedFunction": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportOptionalSubscript": "none",
+    "reportAttributeAccessIssue": "none"
+  },
+  "exclude": ["**/__pycache__", ".venv", "build", "dist"]
+}
