@@ -10,10 +10,23 @@ import { Candidate } from './Candidate';
 import { InterviewEnd } from './InterviewEnd';
 import { InterviewStart } from './InterviewStart';
 import { InterviewHeader } from './InterviewHeader';
+import { usePipecatClient } from '@pipecat-ai/client-react';
 
 type InterviewStatus = 'notStarted' | 'ongoing' | 'ended';
 
 export const Interview = () => {
+  const client = usePipecatClient();
+
+  const handleEnd = async () => {
+    if (!client) {
+      console.error('Pipecat client is not initialized');
+      return;
+    }
+
+    await client.disconnect();
+    setInterviewStatus('ended');
+  };
+
   const [aiSpeaking, setAISpeaking] = useState<boolean>(false);
   const [personSpeaking, setPersonSpeaking] = useState<boolean>(false);
   const [interviewStatus, setInterviewStatus] = useState<InterviewStatus>('notStarted');
@@ -33,7 +46,7 @@ export const Interview = () => {
           {interviewStatus === 'ongoing' && <AI aiSpeaking={aiSpeaking} />}
 
           {interviewStatus === 'ongoing' && (
-            <AccentButton className="w-full bg-red-700" onClick={() => setInterviewStatus('ended')}>
+            <AccentButton className="w-full bg-red-700" onClick={handleEnd}>
               <Square className="mr-2 size-4" />
               End Interview
             </AccentButton>

@@ -18,6 +18,7 @@ from pipecat.services.openai.llm import OpenAILLMService
 from pipecat.transports.base_transport import BaseTransport, TransportParams
 from pipecat.processors.frameworks.rtvi import RTVIConfig, RTVIObserver, RTVIProcessor
 from pipecat.transports.daily.transport import DailyParams
+from pipecat.transports.network.small_webrtc import SmallWebRTCTransport
 from pipecat.processors.aggregators.llm_response_universal import (
     LLMContextAggregatorPair,
 )
@@ -89,22 +90,15 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
 
 
 async def bot(runner_args: RunnerArguments):
-    transport_params = {
-        "daily": lambda: DailyParams(
+    transport = SmallWebRTCTransport(
+        webrtc_connection=runner_args.webrtc_connection,
+        params=TransportParams(
             audio_in_enabled=True,
             audio_out_enabled=True,
-            vad_analyzer=SileroVADAnalyzer(params=VADParams(stop_secs=0.2)),
-            turn_analyzer=LocalSmartTurnAnalyzerV3(),
+            vad_analyzer=SileroVADAnalyzer(),
         ),
-        "webrtc": lambda: TransportParams(
-            audio_in_enabled=True,
-            audio_out_enabled=True,
-            vad_analyzer=SileroVADAnalyzer(params=VADParams(stop_secs=0.2)),
-            turn_analyzer=LocalSmartTurnAnalyzerV3(),
-        ),
-    }
+    )
 
-    transport = await create_transport(runner_args, transport_params)
     await run_bot(transport, runner_args)
 
 

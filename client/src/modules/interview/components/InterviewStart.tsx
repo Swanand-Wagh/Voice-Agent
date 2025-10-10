@@ -24,8 +24,8 @@ export const InterviewStart = ({ setInterviewStatus }: InterviewStartProps) => {
       if (isConnected) {
         await client.disconnect();
       } else {
-        await client.startBotAndConnect({
-          endpoint: 'http://localhost:7860/start',
+        await client.connect({
+          webrtcUrl: 'http://localhost:7860/api/offer',
         });
       }
     } catch (error) {
