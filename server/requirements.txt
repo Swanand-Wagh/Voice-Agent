@@ -3,3 +3,4 @@ uvicorn
 openai
 python-dotenv
 pipecat-ai[webrtc,silero,deepgram,openai,cartesia,local-smart-turn-v3,runner]
+pydantic
